@@ -1,0 +1,21 @@
+//BGP
+
+
+
+
+//in router0...CLI command
+exit
+router bgp 100
+network 198.123.1.0
+network 198.123.2.0
+neighbor 198.123.2.2 remote-as 200
+neighbor 198.123.3.2 remote-as 200
+exit
+
+//in router1 ...CLI command
+exit
+router bgp 200
+network 198.123.2.0
+network 198.123.3.0
+neighbor 198.123.2.1 remote-as 100
+neighbor 198.123.1.2 remote-as 100
